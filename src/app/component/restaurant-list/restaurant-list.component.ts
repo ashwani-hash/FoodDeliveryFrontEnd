@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Restaurant } from '../../common/restaurant'
-import { RestaurantService } from './'
-
+import { RestaurantService } from '../../services/restaurant.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-restaurant-list',
   templateUrl: './restaurant-list.component.html',
@@ -19,7 +19,7 @@ export class RestaurantListComponent implements OnInit {
   }
 
    reloadData() {
-    this.restaurants = this.restaurantService.getRestaurantList();
+    this.restaurants = this.restaurantService.getRestaurantsList();
   }
 
   deleteRestaurant(id: number) {
